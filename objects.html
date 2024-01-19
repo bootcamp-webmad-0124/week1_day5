@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Object declaration
+        const obj1 = {}
+        const obj2 = new Object()
+
+        console.log(typeof obj)
+
+
+
+        const person = {
+            firstName: 'Germán',
+            lastName: 'Álvarez',
+            birth: new Date(1986, 23, 4),
+            address: {
+                street: 'G Luna',
+                number: 33,
+                zipcode: 28002,
+                city: 'Madrid'
+            },
+            hobbies: ['sky', 'rave', 'beer'],
+            celiac: false,
+            subscriptions: [
+                { service: 'Netflix', cost: 12.99 },
+                { service: 'HBO', cost: 9.5 },
+                { service: 'GoTo global', cost: 10.99 },
+            ]
+        }
+
+        // Access (getter)
+        console.log(`La persona se llama ${person.firstName} ${person['lastName']}`)
+
+        // Access (setter)
+        person.lastName = 'Kardasian'
+        console.log(`La persona se llama ${person.firstName} ${person['lastName']}`)
+
+        // Object extension
+        console.log(`La persona trabaja en ${person.occupation}`)
+
+        person.occupation = {
+            company: 'Ironhack',
+            position: 'Senior LT'
+        }
+
+        console.log(`La persona trabaja en ${person.occupation.company}`)
+
+
+        // in operator
+        console.log(`¿La persona tiene edad?`, 'age' in person)
+
+        // keys method
+        console.log('Las claves del objeto son:', Object.keys(person))
+
+        // values method
+        console.log('Las claves del objeto son:', Object.values(person))
+
+        // for in loop
+        for (let personProperty in person) {
+            console.log('El valor para la propiedad', personProperty, 'es', person[personProperty])
+        }
+
+
+
+
+        // Excercise
+
+        let totalCost = 0
+
+        person.subscriptions.forEach(function (eachSubscription) {
+            totalCost += eachSubscription.cost
+        })
+
+        console.log(`Me estoy dejando en total ${totalCost.toFixed(2)}€ en suscriptiones... ¡madre mia!`)
+
+
+
+    </script>
+</body>
+
+</html>
